@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 400px;
+  grid-column-gap: 40px;
+  text-align: center;
+  font-size: 13px;
+
+}
+
+@media screen and (max-width: 400px) {
+  @-ms-viewport {
+    width: 320px;
+  }
+
+  main {
+    grid-template-columns: 320px
+  }
+
+  .addSet input,
+  .addSet textarea {
+    width: 100px;
+
+  }
+
+  .addSet select {
+    width: 105px;
+  }
+}
+
+
+.set,
+.list,
+.addSet {
+  border: 1px solid green;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.set {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list {
+  max-height: 500px;
+  min-height: 200px;
+  /* overflow-y: scroll; */
+}
+
+.addSet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.addSet div {
+  padding: 5px;
+}
+
+.addSet input,
+.addSet textarea {
+  width: 150px;
+
+}
+
+.addSet select {
+  width: 155px;
+}
+
+.item {
+  border: 1px solid green;
+  margin: 20px;
+  border-radius: 5px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch; */
+}
+
+.item1 {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}

@@ -1,0 +1,35 @@
+
+<main>
+  <h1>ToDo:</h1>
+  <div class="list">
+    <div class="item" *ngFor='let task of getTodos()'>
+      <app-task [task]='task' [updateTask]='updateTask()'>
+      </app-task>
+    </div>
+  </div>
+  <app-set>
+    <button (click)='createTask()'>Добавить</button>
+    <div>
+      <input type="checkbox" name="" (change)='toggleSortTodosByPriority()'>
+      По приоритету
+    </div>
+
+    <select name="" id="sortList" (change)="selectByProjectName($event.target.value)">
+      <option value=""> Все </option>
+      <option *ngFor='let key of getTodosProjectNames()' [value]='key'>
+        Проект {{key}}
+      </option>
+    </select>
+  
+  </app-set>
+
+  <app-add-set *ngIf='isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd' >
+
+  </app-add-set>
+  
+  <app-add-set *ngIf='!isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd'  >
+
+  </app-add-set>
+
+</main>
+

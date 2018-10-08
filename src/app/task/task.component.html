@@ -1,0 +1,12 @@
+  <h1>{{task.title}}</h1>
+  <div class="item1">
+    <div>Проект {{task.project}}
+    </div>
+    <div>Приоритет {{task.priority}}</div>
+  </div>
+  <div class="text item1" [style.visibility]='visibility'>{{task.textarea}}</div>
+  <div class="item1">
+    <button (click)='updateTask(task)'>Изменить</button>
+    <button (click)='close()'>Закрыть</button>
+    <button (click)='toggleVisibilityTextArea()'>Развернуть</button>
+  </div>

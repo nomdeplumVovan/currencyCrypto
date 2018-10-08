@@ -1,0 +1,21 @@
+<div class="addSet" [id]="todo.id" >
+  <div>Заголовок задачи <input type="text" name="title"   [(ngModel)]="todo.title"></div>
+  <div>Название проекта <input type="text" name="project" [(ngModel)]="todo.project"></div>
+  <div>Приоритет
+    <select id="prior" name="priority" [(ngModel)]="todo.priority">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div> Описание <textarea name="textarea" [(ngModel)]="todo.textarea" cols="30" rows="3"></textarea>
+  </div>
+  <div>
+    <button (click)='save(todo)'>Сохранить</button>
+    <button (click)="reset()">Отменить</button>
+  </div>
+</div>
+
+
+<!-- priority,title, project, textarea -->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>ToDo</title>
+</head>
+
+<body>
+  <main>
+    <h1>ToDo:</h1>
+    <div class="list">
+      <div class="item">
+        <h1>Задача</h1>
+        <div class="item1">
+          <div>Проект {{name}}</div>
+          <div>Приоритет{{value}}</div>
+        </div>
+        <div class="item1"> <button>Изменить</button> <button>Закрыть</button> <button>Развернуть</button></div>
+      </div>
+      <div class="item">
+        <h1>Задача</h1>
+        <div class="item1">
+          <div>Проект {{name}}</div>
+          <div>Приоритет{{value}}</div>
+        </div>
+        <div class="item1"> <button>Изменить</button> <button>Закрыть</button> <button>Развернуть</button></div>
+      </div>
+      <div class="item">
+        <h1>Задача</h1>
+        <div class="item1">
+          <div>Проект {{name}}</div>
+          <div>Приоритет{{value}}</div>
+        </div>
+        <div class="item1"> <button>Изменить</button> <button>Закрыть</button> <button>Развернуть</button></div>
+      </div>
+      <div class="item">
+        <h1>Задача</h1>
+        <div class="item1">
+          <div>Проект {{name}}</div>
+          <div>Приоритет{{value}}</div>
+        </div>
+        <div class="item1"> <button>Изменить</button> <button>Закрыть</button> <button>Развернуть</button></div>
+      </div>
+    </div>
+    <div class="set">
+      <button id="add">Добавить</button>
+      <div><input type="checkbox" name="" id="sortCheck">По приоритету</div>
+      <select name="" id="sortList">
+        <option value="">Все</option>
+        <option value="">1</option>
+        <option value="">2</option>
+      </select>
+    </div>
+    <div class="addSet">
+      <div>Заголовок задачи <input type="text" id="name"></div>
+      <div>Название проекта <input type="text" id="project"></div>
+      <div>Приоритет
+        <select id="prior">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div> Описание <textarea name="" id="textarea" cols="30" rows="3"></textarea></div>
+      <div><button>Сохранить</button> <button type="reset">Отменить</button> </div>
+    </div>
+  </main>
+</body>
+
+</html>
