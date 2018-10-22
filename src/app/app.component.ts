@@ -51,11 +51,11 @@ export class AppComponent implements OnInit {
     this.isSorted = !this.isSorted;
   }
 
-  getTodosProjectNames() { // возвращает уникальные имена проектов getTodosProjectNames(): тодо ,тестинг
+  getTodosProjectNames() { // возвращает уникальные имена проектов getTodosProjectNames()
     return this.todosService.getProjectNames();
   }
 
-  selectByProjectName(selectedProjectName: string) {  // выбраное имя проекта selectByProjectName():тестинг:
+  selectByProjectName(selectedProjectName: string) {  // выбраное имя проекта selectByProjectName()
     this.selectedProjectName = selectedProjectName;
   }
 

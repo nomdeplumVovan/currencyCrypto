@@ -8,7 +8,7 @@ import { SetComponent } from './set/set.component';
 import { TodosService } from './todos.service';
 import { TaskaComponent } from './add-set/taska/taska.component';
 import { TaskComponent } from './task/task.component';
-import { DelayDirective } from './delay.directive';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +17,6 @@ import { DelayDirective } from './delay.directive';
     SetComponent,
     TaskaComponent,
     TaskComponent,
-    DelayDirective
   ],
   imports: [
     BrowserModule, FormsModule
