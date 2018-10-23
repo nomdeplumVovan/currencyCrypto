@@ -1,23 +1,23 @@
 import { Injectable, Output, Input } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class Taska {
   constructor(
-    public priority: string = '4',
-    public title: string = '',
-    public project: string = '',
-    public textarea: string = '',
-    public id: any = ''
+    public priority: String = ' ',
+    public title: String = '',
+    public project: String = '',
+    public textarea: String = '',
+    public id: String = ''
   ) { }
 }
 
 export class TodosService {
-  public taskSort: any;
-  public tasks: Taska[] = [];
+  // public taskSort: any;
+  public tasks: Taska [] = [];
   public task: Taska;
-  public editedTasks: Taska[];
+  // public editedTasks: Taska[];
   public visibleAdd: String = 'visible';
 
   @Input() reset: Function;
@@ -78,8 +78,10 @@ export class TodosService {
   }
 
   remove(todo: Taska) { // mocked todo -> { id: 'abcdqwer' }
+    if (confirm('Вы хотите удалить задачу?')) {
     this.tasks = this.tasks.filter((t) => t.id !== todo.id); // mocked [{ id: 'abcdqwer' }, { id: 'abcdqwer1' }, { id: 'abcdqwer2' }];
-    this.saveToLocalStorage(); // mocked empty function;
+    this.saveToLocalStorage();
+    } // mocked empty function;
   }
 
 }

@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "github-build": "ng build --prod --base-href https://nomdeplumvovan.github.io/todo/",
     "deploy": "npm run github-build && npm run gh-pages",
-    "gh-pages": "gh-pages -d dist -b gh-pages"
+    "gh-pages": "gh-pages -d dist/ToDo -b gh-pages"
   },
   "private": true,
   "dependencies": {

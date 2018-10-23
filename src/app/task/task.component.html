@@ -4,7 +4,7 @@
     </div>
     <div>Приоритет {{task.priority}}</div>
   </div>
-  <div class="text item1" [style.visibility]='visibility' [style.display]='display'>{{task.textarea}}</div>
+  <div class="text item1" [style.display]='display'>{{task.textarea}}</div>
   <div class="item1">
     <button (click)='updateTask(task)'>Изменить</button>
     <button (click)='remove(task)'>Удалить</button>

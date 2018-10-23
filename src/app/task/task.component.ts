@@ -9,9 +9,9 @@ import { Taska, TodosService } from '../todos.service';
 })
 export class TaskComponent implements OnInit {
 
-  // public visibility: String = 'hidden';
+
   public display: String = 'none';
-  public i: number;
+
   @Input() task: Taska;
   @Input() updateTask: Function;
   @Output() selectedTaska: Taska;
