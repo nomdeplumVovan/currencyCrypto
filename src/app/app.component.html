@@ -7,7 +7,7 @@
       </app-task>
     </div>
   </div>
-  <app-set>
+  <div class="set">
     <button (click)='createTask()'>Добавить</button>
     <div>
       <input type="checkbox" name="" (change)='toggleSortTodosByPriority()'>
@@ -20,8 +20,8 @@
         Проект {{key}}
       </option>
     </select>
+  </div>
   
-  </app-set>
 
   <app-add-set *ngIf='isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd' >
 

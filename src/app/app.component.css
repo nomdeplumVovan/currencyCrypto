@@ -24,14 +24,12 @@ main {
   .addSet input,
   .addSet textarea {
     width: 100px;
-
   }
 
   .addSet select {
     width: 105px;
   }
 }
-
 
 .set,
 .list,
@@ -69,7 +67,6 @@ main {
 .addSet input,
 .addSet textarea {
   width: 150px;
-
 }
 
 .addSet select {
@@ -80,10 +77,6 @@ main {
   border: 1px solid green;
   margin: 20px;
   border-radius: 5px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: stretch; */
 }
 
 .item1 {
@@ -98,7 +91,3 @@ main {
  font-style: italic;
  font-size: 14px;
 }
-/* .button button{
-  margin-right: 20px;
-  margin-bottom: 20px;
-} */

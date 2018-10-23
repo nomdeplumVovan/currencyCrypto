@@ -1,4 +1,4 @@
-body {
+/* body {
   display: flex;
   justify-content: center;
 }
@@ -84,7 +84,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: stretch; */
-}
+/* }
 
 .item1 {
   padding-bottom: 20px;
@@ -92,4 +92,4 @@ main {
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
-}
+}  */

@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 body {
   display: flex;
   justify-content: center;
 }
 
-main {
+/* main {
   display: grid;
   grid-template-columns: 400px;
   grid-column-gap: 40px;
@@ -54,7 +53,7 @@ main {
   max-height: 500px;
   min-height: 200px;
   /* overflow-y: scroll; */
-}
+/* }
 
 .addSet {
   display: flex;
@@ -81,10 +80,7 @@ main {
   border: 1px solid green;
   margin: 20px;
   border-radius: 5px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: stretch; */
+ 
 }
 
 .item1 {
@@ -93,4 +89,4 @@ main {
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
-}
+}  */

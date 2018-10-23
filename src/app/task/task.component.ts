@@ -9,8 +9,8 @@ import { Taska, TodosService } from '../todos.service';
 })
 export class TaskComponent implements OnInit {
 
-  public visibility: String = 'hidden';
-  // public selectedTaska: Taska;
+  // public visibility: String = 'hidden';
+  public display: String = 'none';
   public i: number;
   @Input() task: Taska;
   @Input() updateTask: Function;
@@ -18,18 +18,12 @@ export class TaskComponent implements OnInit {
 
   constructor(private todosService: TodosService) { }
 
+  remove(task) {
+    return this.todosService.remove(task);
+  }
 
-  // selectTaska(selectedTaska: Taska) {     // возвращает выбранный Taska;
-  //   this.selectedTaska = selectedTaska;
-  //   console.log(selectedTaska);
-  //   // this.todosService.visibleAdd = 'visible';
-  //   this.todosService.editTaska(selectedTaska);
-  // }
-
-  close() { }
-
-  toggleVisibilityTextArea() {         // раскрывает/скрывает описание проекта в Taska
-    this.visibility = this.visibility === 'hidden' ? 'visible' : 'hidden';
+  toggleVisibilityTextArea() {
+    this.display = this.display === 'none' ? 'block' : 'none';
   }
 
   ngOnInit() {

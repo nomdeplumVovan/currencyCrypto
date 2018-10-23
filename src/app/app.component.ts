@@ -10,17 +10,13 @@ import { TodosService, Taska } from './todos.service';
 })
 
 export class AppComponent implements OnInit {
-  // public taskSort: [];
-  // public title: string;
-  // public project: string;
-  // public textarea: string;
 
   public currentTask: Taska;
   public isSorted: Boolean = false;
   public selectedProjectName: string;
   public isEdit: Boolean = false;
   public visibleAdd: String = 'hidden';
-  // public id: any = '';
+
 
 
   constructor(private todosService: TodosService) { }
@@ -30,11 +26,9 @@ export class AppComponent implements OnInit {
 
   getTodos() {
     let items = this.todosService.getItems();
-
     if (this.selectedProjectName) {
       items = this.todosService.getTasksByProjectName(this.selectedProjectName);
     }
-
     if (this.isSorted) {
       items = this.todosService.getTasksSortedByPriority(items);
     }
@@ -43,19 +37,18 @@ export class AppComponent implements OnInit {
 
 
   toggleVisibilityEditArea() {
-    this.visibleAdd = this.visibleAdd === 'hidden' ? 'visible' : 'hidden';
     return this.todosService.toggleTodosVisibilityEditArea();
   }
 
-  toggleSortTodosByPriority() {  // сортирует отображение Taska по приоритету
+  toggleSortTodosByPriority() {
     this.isSorted = !this.isSorted;
   }
 
-  getTodosProjectNames() { // возвращает уникальные имена проектов getTodosProjectNames()
+  getTodosProjectNames() {
     return this.todosService.getProjectNames();
   }
 
-  selectByProjectName(selectedProjectName: string) {  // выбраное имя проекта selectByProjectName()
+  selectByProjectName(selectedProjectName: string) {
     this.selectedProjectName = selectedProjectName;
   }
 
@@ -64,28 +57,24 @@ export class AppComponent implements OnInit {
       this.currentTask = task;
       this.isEdit = true;
       this.visibleAdd = 'visible';
-      console.log('UpdateTask', this.currentTask, this.isEdit);
     }.bind(this);
   }
 
   createTask() {
-    this.currentTask = new Taska();
-    this.isEdit = false;
-    console.log('CreateTask', this.currentTask, this.isEdit);
-    this.toggleVisibilityEditArea();
+      this.currentTask = new Taska();
+      this.isEdit = false;
+      this.visibleAdd = 'visible';
   }
 
   saveTodo() {
     return (task: Taska) => {
       if (this.isEdit) {
-        this.todosService.edit(task);
         this.visibleAdd = 'hidden';
-        console.log('getProjectId', this.todosService.getProjectId());
+        this.todosService.saveToLocalStorage();
       } else {
         this.id = (new Date().getTime()).toString(36);
-        this.todosService.addTask(this.priority, this.title, this.project, this.textarea, this.id);
+        this.todosService.addTask(task.priority, task.title, task.project, task.textarea, this.id);
         this.visibleAdd = 'hidden';
-        console.log('getCreatedProjectId', this.todosService.getProjectId());
       }
     };
   }
