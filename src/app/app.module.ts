@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AddSetComponent } from './add-set/add-set.component';
 import { TodosService } from './todos.service';
 import { TaskComponent } from './task/task.component';
+import { TimerComponent } from './timer/timer.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { TaskComponent } from './task/task.component';
     AppComponent,
     AddSetComponent,
     TaskComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule, FormsModule
