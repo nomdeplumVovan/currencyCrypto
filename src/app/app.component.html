@@ -1,9 +1,10 @@
 
-<main>
+<main><app-timer></app-timer>
   <h1>
     ToDo:
     
   </h1>
+  
   <div class="list">
     <div class="item" *ngFor='let task of getTodos()'>
       <app-task [task]='task' [updateTask]='updateTask()'>
@@ -26,7 +27,7 @@
     
   </div>
   
-  
+   
 
   <app-add-set *ngIf='isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd' >
 
@@ -35,7 +36,7 @@
   <app-add-set *ngIf='!isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd'  >
 
   </app-add-set>
-  <app-timer></app-timer>
+ 
 </main>
 
 

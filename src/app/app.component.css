@@ -12,6 +12,10 @@ main {
 
 }
 
+h1 {
+  margin: 0;
+}
+
 @media screen and (max-width: 400px) {
   @-ms-viewport {
     width: 320px;
@@ -43,8 +47,9 @@ main {
   padding: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .list {
@@ -87,7 +92,13 @@ main {
   align-items: stretch;
 }
 
-.text  {
- font-style: italic;
- font-size: 14px;
+.text {
+  font-style: italic;
+  font-size: 14px;
+}
+
+select {
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
 }
