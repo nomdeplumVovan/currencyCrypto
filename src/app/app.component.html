@@ -1,42 +1,83 @@
+<main>
+  <div class="menu">
 
-<main><app-timer></app-timer>
-  <h1>
-    ToDo:
-    
-  </h1>
-  
+    <mat-select placeholder="Рус" class="lang"  (selectionChange)='translate($event)' [(value)]="selected">
+      <mat-option *ngFor="let lang of languages" [value]="lang" >
+        {{lang}}
+      </mat-option>
+    </mat-select>
+
+    <app-timer></app-timer>
+  </div>
+  <h1 [ngClass]="{english:eng}">To Do:</h1>
+  <h1 [ngClass]="{russian:rus}">Сделать:</h1>
+  <h1 [ngClass]="{ukrainian:ukr}">Зробити:</h1>
+
   <div class="list">
     <div class="item" *ngFor='let task of getTodos()'>
-      <app-task [task]='task' [updateTask]='updateTask()'>
+      <app-task [task]='task' [updateTask]='updateTask()' [eng]='eng' [rus]='rus' [ukr]='ukr'>
       </app-task>
     </div>
   </div>
   <div class="set">
-    <button (click)='createTask()'>Добавить</button>
-    <div>
-      <input type="checkbox" name="" (change)='toggleSortTodosByPriority()'>
-      По приоритету
+    <button (click)='createTask()' mat-raised-button color="primary" [ngClass]="{english:eng}">Add</button>
+    <button (click)='createTask()' mat-raised-button color="primary" [ngClass]="{russian:rus}">Добавить</button>
+    <button (click)='createTask()' mat-raised-button color="primary" [ngClass]="{ukrainian:ukr}">Додати</button>
+    <div [ngClass]="{english:eng}">   
+      <mat-checkbox class="example-margin" [(ngModel)]="indeterminate" type="checkbox" name="" (change)='toggleSortTodosByPriority()'>By
+        priority</mat-checkbox>
+
+    </div>
+    <div [ngClass]="{russian:rus}">
+      <mat-checkbox class="example-margin" [(ngModel)]="indeterminate" type="checkbox" name="" (change)='toggleSortTodosByPriority()'>
+        По приоритету </mat-checkbox>
+
+    </div>
+    <div [ngClass]="{ukrainian:ukr}">
+      <mat-checkbox class="example-margin" [(ngModel)]="indeterminate" type="checkbox" name="" (change)='toggleSortTodosByPriority()'>
+        За пріоритетом </mat-checkbox>
+
     </div>
 
-    <select name="" id="sortList" (change)="selectByProjectName($event.target.value)">
-      <option value=""> Все </option>
-      <option *ngFor='let key of getTodosProjectNames()' [value]='key'>
-        Проект {{key}}
-      </option>
-    </select>
-    
+    <mat-form-field class="select-project" [ngClass]="{russian:rus}">
+      <mat-select name="" id="sortList" (selectionChange)="selectByProjectName($event.value)" class="select-project"
+      [(value)]="selectedProjectName" placeholder ="Сортировка по названию проекта">
+         <mat-option value="" > Все </mat-option>
+        <mat-option *ngFor='let key of getTodosProjectNames()' [value]='key'>
+          {{key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="select-project" [ngClass]="{english:eng}">
+      <mat-select name="" id="sortList" (selectionChange)="selectByProjectName($event.value)" class="select-project"
+      [(value)]="selectedProjectName"  placeholder ="Sort by project name">
+        <mat-option value="" [ngClass]="{english:eng}"> All </mat-option>
+        <mat-option *ngFor='let key of getTodosProjectNames()' [value]='key'>
+          {{key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="select-project" [ngClass]="{ukrainian:ukr}">
+      <mat-select name="" id="sortList" (selectionChange)="selectByProjectName($event.value)" class="select-project"
+      [(value)]="selectedProjectName" placeholder ="Сортування за назвою проекту">
+        <mat-option value="" [ngClass]="{ukrainian:ukr}"> Усi </mat-option>
+        <mat-option *ngFor='let key of getTodosProjectNames()' [value]='key'>
+          {{key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
-  
-   
 
-  <app-add-set *ngIf='isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd' >
 
-  </app-add-set>
-  
-  <app-add-set *ngIf='!isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()' [style.visibility] = 'visibleAdd'  >
+
+  <app-add-set *ngIf='isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()'
+    [style.visibility]='visibleAdd' [eng]='eng' [rus]='rus' [ukr]='ukr'>
 
   </app-add-set>
- 
+
+  <app-add-set *ngIf='!isEdit && currentTask' [todo]='currentTask' [save]='saveTodo()' [reset]='reset()'
+    [style.visibility]='visibleAdd' [eng]='eng' [rus]='rus' [ukr]='ukr'>
+
+  </app-add-set>
+
 </main>
-
-

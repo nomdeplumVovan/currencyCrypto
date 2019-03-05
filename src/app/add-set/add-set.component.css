@@ -1,7 +1,7 @@
 .addSet {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   padding: 20px;
 }
 
@@ -9,18 +9,53 @@
   padding: 5px;
 }
 
-.addSet input,
-.addSet textarea {
-  width: 150px;
-
+.select-border,
+input,
+textarea {
+  width: 100%;
+ 
+  line-height: 2rem;
 }
 
-.addSet select {
-  width: 155px;
+.form-field {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-add {
+  width: 45%;
+}
+
+.input-border {
+  width: 100%;
+
 }
 
 .addSet {
-  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  background-color: white;
+  top: 10vh;
+  left: center;
+  border: 1px solid #3f51b5;
   margin: 10px;
   border-radius: 5px;
+  width: 340px;
+  height: 400px;
+}
+
+.russian,
+.english,
+.ukrainian {
+  display: none;
+}
+
+.mat-form-field-infix{
+  height: 2rem;
 }

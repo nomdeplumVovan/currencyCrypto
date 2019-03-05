@@ -1,12 +1,37 @@
-  <h1>{{task.title}}</h1>
-  <div class="item1">
-    <div>Проект {{task.project}}
-    </div>
-    <div>Приоритет {{task.priority}}</div>
+<h2>{{task.title}}</h2>
+<div class="item1 " [ngClass]="{russian:rus}">
+  <div>Проект {{task.project}}
   </div>
-  <div class="text item1" [style.display]='display'>{{task.textarea}}</div>
-  <div class="item1">
-    <button (click)='updateTask(task)'>Изменить</button>
-    <button (click)='remove(task)'>Удалить</button>
-    <button (click)='toggleVisibilityTextArea()'>Развернуть</button>
+  <div>Приоритет <span>{{task.priority}}</span> </div>
+</div>
+<div class="item1 " [ngClass]="{english:eng}">
+  <div>Project {{task.project}}
   </div>
+  <div>Priority <span> {{task.priority}}</span> </div>
+</div>
+<div class="item1 " [ngClass]="{ukrainian:ukr}">
+  <div>Проект {{task.project}}
+  </div>
+  <div>Пріоритет <span>{{task.priority}}</span> </div>
+</div>
+
+
+<div class="text item1 " [style.display]='display'>{{task.textarea}}</div>
+
+<div class="item1 " [ngClass]="{russian:rus}">
+  <button (click)='updateTask(task)' mat-raised-button color="primary">Изменить</button>
+  <button (click)='remove(task)' mat-raised-button color="primary">Удалить</button>
+  <button (click)='toggleVisibilityTextArea()' mat-raised-button color="primary">Развернуть</button>
+</div>
+
+<div class="item1" [ngClass]="{english:eng}">
+  <button (click)='updateTask(task)' mat-raised-button color="primary">Change </button>
+  <button (click)='remove(task)' mat-raised-button color="primary"> Delete </button>
+  <button (click)='toggleVisibilityTextArea()' mat-raised-button color="primary">Expand</button>
+</div>
+
+<div class="item1 " [ngClass]="{ukrainian:ukr}">
+  <button (click)='updateTask(task)' mat-raised-button color="primary">Змінити</button>
+  <button (click)='remove(task)' mat-raised-button color="primary">Вилучити</button>
+  <button (click)='toggleVisibilityTextArea()' mat-raised-button color="primary">Розгорнути</button>
+</div>

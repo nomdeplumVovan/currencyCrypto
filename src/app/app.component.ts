@@ -16,7 +16,12 @@ export class AppComponent implements OnInit {
   public selectedProjectName: string;
   public isEdit: Boolean = false;
   public visibleAdd: String = 'hidden';
-
+  public languages = ['Eng', 'Рус', ' Укр'];
+  public selected: string;
+  public eng = true;
+  public rus = false;
+  public ukr = true;
+  public i: number;
 
 
   constructor(private todosService: TodosService) { }
@@ -50,6 +55,7 @@ export class AppComponent implements OnInit {
 
   selectByProjectName(selectedProjectName: string) {
     this.selectedProjectName = selectedProjectName;
+    console.log(this.selectedProjectName);
   }
 
   updateTask() {
@@ -61,9 +67,9 @@ export class AppComponent implements OnInit {
   }
 
   createTask() {
-      this.currentTask = new Taska();
-      this.isEdit = false;
-      this.visibleAdd = 'visible';
+    this.currentTask = new Taska();
+    this.isEdit = false;
+    this.visibleAdd = 'visible';
   }
 
   saveTodo() {
@@ -85,6 +91,26 @@ export class AppComponent implements OnInit {
       this.visibleAdd = 'hidden';
     };
   }
+  translate(selected:string) {
+    if (this.selected === this.languages[0]) {
+     this.eng = false;
+     this.rus = true;
+     this.ukr= true;
+    }
+    if (this.selected == this.languages[1]) {
+     this.eng = true;
+     this.rus = false;
+     this.ukr= true;
+    }
+    if (this.selected == this.languages[2]) {
+     this.eng = true;
+     this.rus = true;
+     this.ukr= false;
+    }
+    console.log(this.selected);
+  }
+
+
 
   ngOnInit() {
 

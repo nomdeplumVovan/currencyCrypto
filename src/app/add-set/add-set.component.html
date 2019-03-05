@@ -1,20 +1,120 @@
-<div class="addSet" [id]="todo.id" >
-  <div>Заголовок задачи <input type="text" name="title"   [(ngModel)]="todo.title"></div>
-  <div>Название проекта <input type="text" name="project" [(ngModel)]="todo.project"></div>
-  <div>Приоритет
-    <select id="prior" name="priority" [(ngModel)]="todo.priority">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
+<div class="addSet" [id]="todo.id">
+
+  <div class="input-border " [ngClass]="{russian:rus}">
+    <mat-form-field class="form-field " [ngClass]="{russian:rus}">
+      <input matInput type="text" [(ngModel)]="todo.title" placeholder="Заголовок задачи" name="title">
+      <button mat-button *ngIf="todo.title" matSuffix mat-icon-button aria-label="Clear" (click)="todo.title=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
-  <div> Описание <textarea name="textarea" [(ngModel)]="todo.textarea" cols="30" rows="3"></textarea>
+  <div class="input-border " [ngClass]="{english:eng}">
+    <mat-form-field class="form-field " [ngClass]="{english:eng}">
+      <input matInput type="text" [(ngModel)]="todo.title" placeholder="Task title" name="title">
+      <button mat-button *ngIf="todo.title" matSuffix mat-icon-button aria-label="Clear" (click)="todo.title=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
-  <div>
-      
-    <button (click)='save(todo)'>Сохранить</button>
-    <button (click)="reset()">Отменить</button>
+  <div class="input-border " [ngClass]="{ukrainian:ukr}">
+    <mat-form-field class="form-field "[ngClass]="{ukrainian:ukr}">
+      <input matInput type="text" [(ngModel)]="todo.title" placeholder="Тема завдання" name="title">
+      <button mat-button *ngIf="todo.title" matSuffix mat-icon-button aria-label="Clear" (click)="todo.title=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="input-border " [ngClass]="{russian:rus}">
+    <mat-form-field class="form-field" [ngClass]="{russian:rus}">
+      <input matInput type="text" [(ngModel)]="todo.project" placeholder="Название проекта" name="project">
+      <button mat-button *ngIf="todo.project" matSuffix mat-icon-button aria-label="Clear" (click)="todo.project=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="input-border " [ngClass]="{english:eng}">
+    <mat-form-field class="form-field " [ngClass]="{english:eng}">
+      <input matInput type="text" [(ngModel)]="todo.project" placeholder="Project name" name="project">
+      <button mat-button *ngIf="todo.project" matSuffix mat-icon-button aria-label="Clear" (click)="todo.project=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="input-border" [ngClass]="{ukrainian:ukr}">
+    <mat-form-field class="form-field" [ngClass]="{ukrainian:ukr}">
+      <input matInput type="text" [(ngModel)]="todo.project" placeholder="Назва проекту" name="project">
+      <button mat-button *ngIf="todo.project" matSuffix mat-icon-button aria-label="Clear" (click)="todo.project=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="input-border">
+    <mat-form-field class="select-border " [ngClass]="{english:eng}">
+      <mat-select id="prior" name="priority" [(ngModel)]="todo.priority" placeholder="Priority" class="select-border "
+        [ngClass]="{english:eng}">
+        <mat-option *ngFor="let i of [1,2,3,4]" [value]="i">
+          Priority {{i}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+    <mat-form-field class="select-border " [ngClass]="{russian:rus}">
+      <mat-select id="prior" name="priority" [(ngModel)]="todo.priority" placeholder="Приоритет" class="select-border " [ngClass]="{russian:rus}">
+        <mat-option *ngFor="let i of [1,2,3,4]" [value]="i">
+          Приоритет {{i}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="select-border" [ngClass]="{ukrainian:ukr}">
+      <mat-select id="prior" name="priority" [(ngModel)]="todo.priority" placeholder="Пріоритет" class="select-border " [ngClass]="{ukrainian:ukr}">
+        <mat-option *ngFor="let i of [1,2,3,4]" [value]="i">
+          Пріоритет {{i}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div class="input-border " [ngClass]="{russian:rus}">
+    <mat-form-field class="input-border" [ngClass]="{russian:rus}">
+      <textarea matInput name="textarea" [(ngModel)]="todo.textarea" placeholder="Описание" [ngClass]="{russian:rus}"
+        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="9"></textarea>
+      <button mat-button *ngIf="todo.textarea" matSuffix mat-icon-button aria-label="Clear" (click)="todo.textarea=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="input-border " [ngClass]="{english:eng}">
+    <mat-form-field class="input-border " [ngClass]="{english:eng}">
+      <textarea matInput name="textarea" [(ngModel)]="todo.textarea" placeholder="Description" [ngClass]="{english:eng}"
+        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="9"></textarea>
+      <button mat-button *ngIf="todo.textarea" matSuffix mat-icon-button aria-label="Clear" (click)="todo.textarea=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="input-border" [ngClass]="{ukrainian:ukr}">
+    <mat-form-field class="input-border " [ngClass]="{ukrainian:ukr}">
+      <textarea matInput name="textarea" [(ngModel)]="todo.textarea" placeholder="Опиc" [ngClass]="{ukrainian:ukr}"
+        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="9"></textarea>
+      <button mat-button *ngIf="todo.textarea" matSuffix mat-icon-button aria-label="Clear" (click)="todo.textarea=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="input-border buttons" [ngClass]="{russian:rus}">
+    <button (click)='save(todo)' class=" button-add" mat-raised-button color="primary" [ngClass]="{russian:rus}">Сохранить</button>
+    <button (click)="reset()" class=" button-add" mat-raised-button color="primary" [ngClass]="{russian:rus}">Отменить</button>
+  </div>
+  <div class="input-border buttons" [ngClass]="{english:eng}">
+    <button (click)='save(todo)' class="button-add" [ngClass]="{english:eng}" mat-raised-button color="primary">Save</button>
+    <button (click)="reset()" class="button-add" [ngClass]="{english:eng}" mat-raised-button color="primary">Cancel</button></div>
+  <div class="input-border buttons" [ngClass]="{ukrainian:ukr}">
+    <button (click)='save(todo)' class=" button-add"[ngClass]="{ukrainian:ukr}" mat-raised-button color="primary">Зберегти</button>
+    <button (click)="reset()" class="button-add"[ngClass]="{ukrainian:ukr}" mat-raised-button color="primary">Скасувати</button>
   </div>
 </div>
 

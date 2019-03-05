@@ -11,9 +11,13 @@ export class AddSetComponent implements OnInit {
   public task: Taska;
 
   @Input() todo: Taska;
+  @Input() eng: Boolean;
+  @Input() rus: Boolean;
+  @Input() ukr: Boolean;
   @Input() save: Function;
   @Input() reset: Function;
   @Input() items: Taska[];
+
 
   constructor(private todosService: TodosService) { }
 

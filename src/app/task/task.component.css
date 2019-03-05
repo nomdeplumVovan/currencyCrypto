@@ -1,7 +1,23 @@
 .item1 {
-  padding-bottom: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: stretch;
-}  
+  flex-wrap: wrap;
+  font-size: 1.8rem;
+  padding: 20px 10px;
+}
+
+h2 {
+  color: #3f51b5;
+  font-size: 2.8rem;
+}
+
+span {
+  color: #ff4081;
+}
+
+.russian,
+.english,
+.ukrainian {
+  display: none;
+}

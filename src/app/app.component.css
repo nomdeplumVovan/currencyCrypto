@@ -6,15 +6,17 @@ body {
 main {
   display: grid;
   grid-template-columns: 400px;
-  grid-column-gap: 40px;
+  grid-column-gap: 20px;
   text-align: center;
-  font-size: 13px;
-
+  font-size: 1.3rem;
 }
 
 h1 {
+  color: #3f51b5;
+  font-size: 3.4rem;
   margin: 0;
 }
+
 
 @media screen and (max-width: 400px) {
   @-ms-viewport {
@@ -35,10 +37,19 @@ h1 {
   }
 }
 
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px;
+
+}
+
 .set,
 .list,
 .addSet {
-  border: 1px solid green;
+  border: 1px solid #3f51b5;
+  ;
   margin: 10px;
   border-radius: 5px;
 }
@@ -79,7 +90,8 @@ h1 {
 }
 
 .item {
-  border: 1px solid green;
+  border: 1px solid #3f51b5;
+  ;
   margin: 20px;
   border-radius: 5px;
 }
@@ -97,8 +109,23 @@ h1 {
   font-size: 14px;
 }
 
-select {
+.select-project {
+  font-size: 1.6rem;
   width: 100%;
   margin-top: 10px;
   overflow: hidden;
+
+}
+
+.russian,
+.english,
+.ukrainian {
+  display: none;
+}
+
+.lang {
+  color: #3f51b5;
+  font-size: 1.6rem;
+  width: 50px;
+
 }

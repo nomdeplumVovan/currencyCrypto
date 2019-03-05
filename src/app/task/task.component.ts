@@ -14,7 +14,11 @@ export class TaskComponent implements OnInit {
 
   @Input() task: Taska;
   @Input() updateTask: Function;
+  @Input() eng: Boolean;
+  @Input() rus: Boolean;
+  @Input() ukr: Boolean;
   @Output() selectedTaska: Taska;
+
 
   constructor(private todosService: TodosService) { }
 
