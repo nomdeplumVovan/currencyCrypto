@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   public eng = true;
   public rus = false;
   public ukr = true;
-  public i: number;
+  public indeterminate = false;
 
 
   constructor(private todosService: TodosService) { }
